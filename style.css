@@ -1,7 +1,7 @@
 /* Base Styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Serif', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, #f9f3f3, #ffe8f0);
   color: #333;
   padding: 20px;
@@ -50,6 +50,7 @@ h2 {
 }
 
 .mood-buttons button {
+  font-family: "serif";
   font-size: 1.2rem;
   padding: 20px 30px;
   border: none;
