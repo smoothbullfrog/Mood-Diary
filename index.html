@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Diary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Mood Diary - How are you today?</h1>
+<div class="mood-buttons">
+  <button data-mood="happy" onclick="selectMood('happy')">Happy</button>
+  <button data-mood="sad" onclick="selectMood('sad')">Sad</button>
+  <button data-mood="angry" onclick="selectMood('angry')">Angry</button>
+  <button data-mood="calm" onclick="selectMood('calm')">Calm</button>
+</div>
+
+  <div id="mood-message">
+    <p>Select a mood.</p>
+  </div>
+
+  <div id="diary-entry" style="display:none; margin-top: 20px;">
+    <textarea id="userMessage" placeholder="Write what you're feeling..." rows="5" cols="40"></textarea><br>
+    <button onclick="saveEntry()" id="saveBtn" class="save-Btn">Save </button>
+  </div>
+  
+  <hr>
+  <h2>My Mood Diary</h2>
+  <div id="diary-log"></div>
+
+  
+  <div id="diary-log"></div>
+<button onclick="clearDiary()" id="clear-diary-btn">Clear Diary</button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

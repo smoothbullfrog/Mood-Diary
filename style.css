@@ -1,0 +1,188 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #f9f3f3, #ffe8f0);
+  color: #333;
+  padding: 20px;
+  transition: background 0.5s ease-in-out;
+  
+}
+
+/* Mood-specific background colors */
+.bg-happy {
+  background: linear-gradient(to bottom, #ffe066, #ffb347); /* Sunny Orange */
+}
+
+.bg-sad {
+  background: linear-gradient(to bottom, #cbb4d4, #a692b3); /* Pale Blue */
+}
+
+.bg-angry {
+  background: linear-gradient(to bottom, #e57373, #d32f2f); /* Dark Orange */
+}
+
+.bg-calm {
+  background: linear-gradient(to bottom, #cfe7f2, #a8cfe6); /* Lavender */
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  color: #8e44ad;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  margin-top: 0;
+}
+
+/* Mood Buttons */
+.mood-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.mood-buttons button {
+  font-family: "Times New Roman";
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffd6ec;
+  color: #8e44ad;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mood-buttons button:hover {
+  background-color: #f7c1e2;
+  transform: scale(1.05);
+}
+
+/* Mood Message */
+#mood-message {
+  background-color: #fff0f5;
+  border-left: 5px solid #d16ba5;
+  padding: 15px 20px;
+  margin: 0 auto 20px auto;
+  max-width: 500px;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 0 2px 8px rgba(209, 107, 165, 0.15);
+}
+
+/* Diary Entry Section */
+#diary-entry {
+  display: none;
+  text-align: center;
+}
+
+textarea#userMessage {
+  width: 100%;
+  max-width: 500px;
+  height: 120px;
+  padding: 10px;
+  border: 2px solid #f7c1e2;
+  border-radius: 10px;
+  resize: vertical;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Shared button style for all buttons unless overridden */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color: #ffd6ec;
+  color: #8e44ad;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #f7c1e2;
+  transform: scale(1.05);
+}
+
+/* Diary Log */
+#diary-log {
+  margin-top: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#diary-log div {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+#diary-log strong {
+  color: #8e44ad;
+}
+
+#diary-log p {
+  margin: 10px 0;
+}
+
+#diary-log button {
+  background-color: transparent;
+  border: none;
+  color: #d16ba5;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#diary-log button:hover {
+  color: #bf5297;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .mood-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  textarea#userMessage {
+    width: 90%;
+  }
+
+  #diary-log {
+    width: 90%;
+  }
+  
+  #clear-diary-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#clear-diary-btn:hover {
+  background-color: #d32f2f;
+}
+}
