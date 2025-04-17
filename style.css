@@ -1,29 +1,28 @@
 /* Base Styles */
 body {
   margin: 0;
-  font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(to bottom, #f9f3f3, #ffe8f0);
   color: #333;
   padding: 20px;
   transition: background 0.5s ease-in-out;
-  
 }
 
 /* Mood-specific background colors */
 .bg-happy {
-  background: linear-gradient(to bottom, #ffe066, #ffb347); /* Sunny Orange */
+  background: linear-gradient(to bottom, #ffe066, #ffb347);
 }
 
 .bg-sad {
-  background: linear-gradient(to bottom, #cbb4d4, #a692b3); /* Pale Blue */
+  background: linear-gradient(to bottom, #cbb4d4, #a692b3);
 }
 
 .bg-angry {
-  background: linear-gradient(to bottom, #e57373, #d32f2f); /* Dark Orange */
+  background: linear-gradient(to bottom, #e57373, #d32f2f);
 }
 
 .bg-calm {
-  background: linear-gradient(to bottom, #cfe7f2, #a8cfe6); /* Lavender */
+  background: linear-gradient(to bottom, #cfe7f2, #a8cfe6);
 }
 
 /* Title */
@@ -51,7 +50,6 @@ h2 {
 }
 
 .mood-buttons button {
-  font-family: "Times New Roman";
   font-size: 1.2rem;
   padding: 20px 30px;
   border: none;
@@ -97,9 +95,10 @@ textarea#userMessage {
   resize: vertical;
   margin-bottom: 10px;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
-/* Shared button style for all buttons unless overridden */
+/* Shared Button Styles */
 button {
   padding: 10px 20px;
   border: none;
@@ -132,6 +131,10 @@ button:hover {
   margin-bottom: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #diary-log strong {
@@ -156,33 +159,55 @@ button:hover {
   color: #bf5297;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .mood-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+#diary-log div {
+  ...
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto; /* optional: adds scrollbar for too-long text */
+}
 
-  textarea#userMessage {
-    width: 90%;
-  }
-
-  #diary-log {
-    width: 90%;
-  }
-  
-  #clear-diary-btn {
+/* Clear Diary Button */
+#clear-diary-btn {
   background-color: #f44336;
   color: white;
   border: none;
   padding: 10px 20px;
-  margin-top: 15px;
-  border-radius: 5px;
+  margin: 15px auto 0;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
+  display: block;
 }
 
+/* Clear Diary Hover */
 #clear-diary-btn:hover {
   background-color: #d32f2f;
 }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .mood-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  textarea#userMessage,
+  #diary-log {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
 }
